@@ -32,6 +32,15 @@ function save() {
 function render(start, end) {
   var container = $('#time-blocks');
 
+  for (var i = start; i <= end ; i++) {
+    var timeBlock = $(timeBlockTemplate); 
+    var label = $('label', timeBlock);
+    var textArea = $('textarea', timeBlock);
+    var hour = (moment(i, 'h').format('h A'));
+    label.text(hour); 
+    textArea.attr('name', `time-${i}`);
+
+}
 }
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
