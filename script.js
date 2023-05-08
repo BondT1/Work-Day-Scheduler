@@ -57,6 +57,26 @@ function loadData() {
   });
 }
 
+// timeBlock colors depending on the current time and block time
+function blockColors() {
+  var currentTime = moment().hour();
+
+  $('.time-block').each(function (index, element) {
+    const blockTime = $(this).data('hour');
+    const textarea = $('textarea', $(this));
+    if (blockTime < currentTime) {
+      textarea.removeClass('future present');
+      textarea.addClass('past');
+    } else if (blockTime == currentTime) {
+      textarea.removeClass('future past');
+      textarea.addClass('present');
+    } else {
+      textarea.removeClass('present past');
+      textarea.addClass('future');
+    }
+  })
+}
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
