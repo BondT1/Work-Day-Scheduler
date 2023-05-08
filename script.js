@@ -1,3 +1,19 @@
+// variables used throughout
+var currentDateEl = $('#currentDay');
+var currentTime;
+var currentDate;
+
+var blockColors;
+var blockTime;
+var showEvents;
+
+var timeBlockTemplate = `<div class="row time-block">
+<label class="col-md-1 hour"></label>
+<textarea class="col-md-10" type="text"></textarea>
+<button class="btn saveBtn col-12 col-md-1" id="btn-4pm"><i class="fas fa-save"></i></button>
+</div>`;
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
