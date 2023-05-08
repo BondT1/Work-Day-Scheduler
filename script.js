@@ -48,6 +48,15 @@ function render(start, end) {
   } 
 }
 
+// pulls the local server to the DOM while also ensuring it remains on the time block after page refresh
+function loadData() {
+  $('.time-block').each(function(index, element) {
+    const hour = $(element).data('hour');
+    const data = localStorage.getItem(hour);
+    $('textarea', $(element)).val(data);
+  });
+}
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
