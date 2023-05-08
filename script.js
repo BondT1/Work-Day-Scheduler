@@ -28,6 +28,11 @@ function save() {
   localStorage.setItem(time, event);
 }
 
+// renders the time blocks in JS instead of doing this in HTML
+function render(start, end) {
+  var container = $('#time-blocks');
+
+}
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
