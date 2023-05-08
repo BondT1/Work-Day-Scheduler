@@ -19,6 +19,14 @@ function dateDisplay() {
   currentDateEl.text(currentDate);
 }
 
+function save() {
+  // sibling HTML textarea attribute changes
+  var event = $(this).siblings('textarea').val();
+  // parent HTML id attribute 
+  var time = $(this).parent().data('hour');
+  // saves to local storage
+  localStorage.setItem(time, event);
+}
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
