@@ -13,6 +13,12 @@ var timeBlockTemplate = `<div class="row time-block">
 <button class="btn saveBtn col-12 col-md-1" id="btn-4pm"><i class="fas fa-save"></i></button>
 </div>`;
 
+// current date and time on Jumbotron
+function dateDisplay() {
+  var currentDate = moment().format('DD MMM YYYY [at] hh:mm:ss a');
+  currentDateEl.text(currentDate);
+}
+
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
