@@ -40,8 +40,14 @@ function render(start, end) {
     label.text(hour); 
     textArea.attr('name', `time-${i}`);
 
+    // saveBtn click listener
+    $('.saveBtn', timeBlock).on('click', save);
+
+    container.append(timeBlock);
+    timeBlock.data('hour', i);
+  } 
 }
-}
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
